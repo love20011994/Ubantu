@@ -1,0 +1,26 @@
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+    margin-left: 20px;
+  }
+
+  .input-box {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .input-box:focus {
+    outline: none;
+    border-color: blue;
+  }

@@ -53,7 +53,7 @@ function Register() {
   return (
     <div style={{backgroundColor:"lightblue",display:"flex",justifyContent:"center",alignItems:"center",height:"500px",width:"400px",marginLeft:"230px",marginTop:"30px"}} >
 
-<form style={{display:"flex",flexDirection:"column",alignItems:"stretch"}} onSubmit={handleSubmit}>
+<form style={{display:"flex",flexDirection:"column",alignItems:"stretch",marginRight:"250px"}} onSubmit={handleSubmit}>
       <input className='input-box'
         type="text"
         name="name"

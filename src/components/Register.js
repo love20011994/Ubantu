@@ -31,7 +31,7 @@ function Register() {
         alert("registration sucess")
       }
       else{
-        console.log("hello")
+        alert("Registration fail")
       }
    console.log(Registerresponse.data.token,"Responserr")
   console.log(Registerresponse.data.status,"@####@@@@@@@@@@@##########@@@@@@@@")

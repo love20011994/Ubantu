@@ -2,7 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import "../Form/Form.css"
 import axios from 'axios';
-function Register() {
+import Login1 from '../Login1';
+
+function Register({luv}) {
     const [formData, setFormData] = useState({
         name: '',
         lastName: '',
@@ -33,6 +35,7 @@ function Register() {
       else{
         alert("Registration fail")
       }
+      luv("kush")
    console.log(Registerresponse.data.token,"Responserr")
   console.log(Registerresponse.data.status,"@####@@@@@@@@@@@##########@@@@@@@@")
    localStorage.setItem('token',Registerresponse.data.token)
@@ -58,11 +61,13 @@ function Register() {
       };
 
       
-      
-    
+     
   return (
     <div style={{backgroundColor:"lightblue",display:"flex",justifyContent:"center",alignItems:"center",height:"500px",width:"400px",marginLeft:"230px",marginTop:"30px"}} >
+ {/* <div>
+     <button onClick={()=>luv()}>Login page</button>
 
+     </div> */}
 <form style={{display:"flex",flexDirection:"column",alignItems:"stretch",marginRight:"250px"}} onSubmit={handleSubmit}>
       <input className='input-box'
         type="text"
@@ -120,7 +125,8 @@ function Register() {
         value={formData.confirmPassword}
         onChange={handleChange}
       /><br/>
-      <button  className='button' type="submit">Submit</button>
+      <button  className='button' type="submit">Submit</button><br></br>
+    
     </form>
     </div>
   )

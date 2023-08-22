@@ -12,6 +12,11 @@ const newresisterdata =()=>{
   setResisterdata(false)
 }
 console.log(Resisterdata,"lllllllllllllllllllllllllllll@@@@")
+
+const luv =()=>{
+  setResisterdata(true)
+
+}
   return (
     <div className='container'>
     <div style={{backgroundImage:`url(${url1})`,height:"100vh"}}> </div>
@@ -21,7 +26,7 @@ console.log(Resisterdata,"lllllllllllllllllllllllllllll@@@@")
       <button style={{color:"blue",marginTop:"380px",position:"relative",right:"300px"}} onClick={newresisterdata}>Register</button>
 
     </div>:
-    <div style={{display:"flex",justifyContent:"center",alignItems:"center",backgroundColor:"lightblue"}}><Register/></div>}
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center",backgroundColor:"lightblue"}}><Register luv={luv}/></div>}
         
       </div>
     

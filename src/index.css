@@ -59,8 +59,19 @@ body{
   width: 260px;
   flex-shrink: 0;
   background-color: rgba(22, 22, 22, 1);
-  height: 89.8vh;
+  height: 91vh;
   overflow: auto;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 63px;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+
+.closed {
+  transform: translateX(-100%);
 }
 
 
@@ -88,7 +99,7 @@ body{
   transition: transform .3s;
 }
 .sidebar-item.open > .sidebar-title .toggle-btn{
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 .sidebar-content{
   padding-top: .25em;

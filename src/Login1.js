@@ -19,14 +19,14 @@ const luv =()=>{
 }
   return (
     <div className='container'>
-    <div style={{backgroundImage:`url(${url1})`,height:"100vh"}}> </div>
-    {  Resisterdata? <div style={{display:"flex",justifyContent:"center",alignItems:"center",backgroundColor:"lightblue"}}><Logindata loginfncdata={loginfncdata}/>
+    <div className='url1' style={{backgroundImage:`url(${url1})`,height:"100vh",width:"",backgroundColor:"red"}}> </div>
+    {  Resisterdata? <div className='logindata1' style={{display:"flex",justifyContent:"center",alignItems:"center",backgroundColor:"blue",height:"100vh"}}><Logindata loginfncdata={loginfncdata}/>
     
     <p style={{color:"blue",marginTop:"280px",position:"relative",right:"180px"}}>IF not login Resister here</p>
       <button style={{color:"blue",marginTop:"380px",position:"relative",right:"300px"}} onClick={newresisterdata}>Register</button>
 
     </div>:
-    <div style={{display:"flex",justifyContent:"center",alignItems:"center",backgroundColor:"lightblue"}}><Register luv={luv}/></div>}
+    <div className='' style={{display:"flex",justifyContent:"center",alignItems:"center",backgroundColor:"lightblue"}}><Register luv={luv}/></div>}
         
       </div>
     

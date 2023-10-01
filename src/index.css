@@ -2,21 +2,88 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* background-color: aquamarine; */
 }
 
 html, body{
   height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: #fff;
 }
+@media only screen and (max-width: 425px) {
+  .url1{
+    /* position: fixed; */
+    /* object-fit: none; */
+    width: 210px;
+    height:100vh
+  }
+  
+ 
+}
+
+@media only screen and (max-width: 425px) {
+ 
+  
+  .logindata1{
+    width: 210px;
+    height:100vh
+  }
+  
+}
+
+@media only screen and (max-width: 375px) {
+  .url1{
+    /* position: fixed; */
+    /* object-fit: none; */
+    width: 200px;
+    height:40vh
+  }
+  
+ 
+}
+
+@media only screen and (max-width: 375px) {
+ 
+  
+  .logindata1{
+    width: 200px;
+    height:40vh
+  }
+  
+}
+@media only screen and (max-width: 300px) {
+  .url1{
+    /* position: fixed; */
+    /* object-fit: none; */
+    width: 150px;
+    height:40vh
+  }
+  
+ 
+}
+
+@media only screen and (max-width: 300px) {
+ 
+  
+  .logindata1{
+    width: 150px;
+    height:40vh
+  }
+  
+}
+
+
+
 
 .main{
   display: flex;
-  height: 100vh;
-}
+  height: 100%
+} */
 
 
 .container{
@@ -29,6 +96,8 @@ body{
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  
+  
 }
 .title{
   font-size: 3em;

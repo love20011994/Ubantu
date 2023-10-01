@@ -126,7 +126,9 @@ let kush =(k)=>{
 
   return (
     <div>
+
     <BrowserRouter>
+
   {/* { logoutvalue ==="logout"? <Login1 loginfncdata={loginfncdata}/>:
 
 loginvalue==="loginsuccess"?
@@ -153,7 +155,7 @@ loginvalue==="loginsuccess"?
       <Middlebars/>
      </div>
      </>:null}
-    
+
     </BrowserRouter>
     
     </div>

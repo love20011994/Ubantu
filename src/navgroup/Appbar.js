@@ -14,12 +14,15 @@ import InputBase from '@mui/material/InputBase';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import  { useState,useEffect } from "react";
+import MenuItem from '@mui/material/MenuItem';
+import Tooltip from '@mui/material/Tooltip';
+import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
 
 
 
 export default function ButtonAppBar({logoutfun,kush}) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
 
     const SearchIconWrapper = styled('div')(({ theme }) => ({
         padding: theme.spacing(0, 2),
@@ -73,17 +76,32 @@ export default function ButtonAppBar({logoutfun,kush}) {
 
 
 //onClick={()=>logoutfun(false)}
-const luv =()=>{
-  setIsSidebarOpen(!isSidebarOpen)
-  kush(isSidebarOpen)
+
+
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+// const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+const handleCloseUserMenu = () => {
+  setAnchorElUser(null);
+};
+const handleOpenUserMenu = (event) => {
+  setAnchorElUser(event.currentTarget);
+};
+
+const handleMenue=(id)=>{
+     console.log(id,"logoutid")
+     if(id===3){
+      logoutfun(true)
+     }
+
+     handleCloseUserMenu()
 
 }
 
-// useEffect(()=>{
-
-// },[])
-  return (
-    <Box  >
+  return(
+  <Box>
       <AppBar position="fixed" >
         <Toolbar sx={{ ml:3 }}>
             <ImageAvatars sx={{ml:3}}/>
@@ -96,7 +114,7 @@ const luv =()=>{
             color="inherit"
             aria-label="menu"
             sx={{ ml:5 }}
-            onClick={luv}
+            // onClick={luv}
           >
             <MenuIcon />
           </IconButton>
@@ -117,12 +135,43 @@ const luv =()=>{
 
           </Box>
           <Box>
-          <AccountCircleIcon onClick={()=>logoutfun(true)} />
+          {/* <AccountCircleIcon  /> */}
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting,index) => (
+                <MenuItem key={setting} onClick={()=>handleMenue(index)}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
          
           </Box>
          </Box>
         </Toolbar>
       </AppBar>
     </Box>
-  );
+  )
 }
+              

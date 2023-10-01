@@ -14,10 +14,16 @@ import InputBase from '@mui/material/InputBase';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import MenuItem from '@mui/material/MenuItem';
+import Tooltip from '@mui/material/Tooltip';
+import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
 
 
 
-export default function ButtonAppBar({logoutfun}) {
+export default function ButtonAppBar({logoutfun,kush}) {
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+
     const SearchIconWrapper = styled('div')(({ theme }) => ({
         padding: theme.spacing(0, 2),
         height: '100%',
@@ -72,10 +78,31 @@ export default function ButtonAppBar({logoutfun}) {
 //onClick={()=>logoutfun(false)}
 
 
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-  return (
-    <Box  >
-      <AppBar position="static" >
+// const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+const handleCloseUserMenu = () => {
+  setAnchorElUser(null);
+};
+const handleOpenUserMenu = (event) => {
+  setAnchorElUser(event.currentTarget);
+};
+
+const handleMenue=(id)=>{
+     console.log(id,"logoutid")
+     if(id===3){
+      logoutfun(true)
+     }
+
+     handleCloseUserMenu()
+
+}
+
+  return(
+  <Box>
+      <AppBar position="fixed" >
         <Toolbar sx={{ ml:3 }}>
             <ImageAvatars sx={{ml:3}}/>
         <Typography variant="h6" component="div" sx={{ ml:3}}>
@@ -87,12 +114,13 @@ export default function ButtonAppBar({logoutfun}) {
             color="inherit"
             aria-label="menu"
             sx={{ ml:5 }}
+            // onClick={luv}
           >
             <MenuIcon />
           </IconButton>
          
           {/* <Button color="inherit">Login</Button> */}
-         <Box sx={{display:"flex",justifyContent:"space-evenly",width:"18.75rem",marginLeft:`${matches?'58%':matches1?"50%":matches2?"40%":matches3?"30%":matches4?"20%":matches5?"10%":matches6?"5%":""}`,backgroundColor:"",alignItems:"center"}}>
+         <Box sx={{display:"flex",justifyContent:"space-evenly",width:"18.75rem",marginLeft:`${matches?'58%':matches1?"55%":matches2?"55%":matches3?"50%":matches4?"45%":matches5?"42%":matches6?"40%":"37%"}`,backgroundColor:"",alignItems:"center"}}>
          <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -107,12 +135,43 @@ export default function ButtonAppBar({logoutfun}) {
 
           </Box>
           <Box>
-          <AccountCircleIcon onClick={()=>logoutfun(true)} />
+          {/* <AccountCircleIcon  /> */}
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting,index) => (
+                <MenuItem key={setting} onClick={()=>handleMenue(index)}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
          
           </Box>
          </Box>
         </Toolbar>
       </AppBar>
     </Box>
-  );
+  )
 }
+              

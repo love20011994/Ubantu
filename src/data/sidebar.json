@@ -124,6 +124,28 @@
         ]
     },
     {
+        "title": "Payment",
+        "icon": "bi-view-list",
+        "childrens": [
+            {
+                "title": "paymemt method",
+                "path": "/love"
+            }
+           
+        ]
+    },
+    {
+        "title": "PaymentGateWay",
+        "icon": "bi-view-list",
+        "childrens": [
+            {
+                "title": "paymemt",
+                "path": "/love1"
+            }
+           
+        ]
+    },
+    {
         "title": "Support",
         "icon": "bi-question-circle-fill",
         "path": "/support"

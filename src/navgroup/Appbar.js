@@ -18,6 +18,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
+import Badge from '@mui/material/Badge';
 
 
 
@@ -89,7 +90,7 @@ const handleOpenUserMenu = (event) => {
 
 const handleMenue=(id)=>{
      console.log(id,"logoutid")
-     if(id===3){
+     if(id==="Logout"){
       logoutfun(true)
      }
 
@@ -99,7 +100,7 @@ const handleMenue=(id)=>{
 
   return (
     <Box  >
-      <AppBar position="static" >
+      <AppBar position="fixed" >
         <Toolbar sx={{ ml:3 }}>
             <ImageAvatars sx={{ml:3}}/>
         <Typography variant="h6" component="div" sx={{ ml:3}}>
@@ -127,8 +128,9 @@ const handleMenue=(id)=>{
             />
           </Search>
           <Box>
+          <Badge badgeContent={17} color="error">
           <NotificationsOutlinedIcon/>
-
+          </Badge>
           </Box>
           <Box>
           {/* <AccountCircleIcon  /> */}
@@ -155,8 +157,8 @@ const handleMenue=(id)=>{
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting,index) => (
-                <MenuItem key={setting} onClick={()=>handleMenue(index)}>
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={()=>handleMenue(setting)}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

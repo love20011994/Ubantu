@@ -17,6 +17,7 @@ function App() {
   const[logoutstoragedata,setlogoutstoragedata] = useState()
   const[loginvalue,setloginvalue] = useState(localStorage.getItem('login'))
   const[logoutvalue,setlogoutvalue] = useState(localStorage.getItem('logout'))
+  const[newState,setnewState] = useState(true)
 
 
   const loginfncdata=(data)=>{
@@ -116,9 +117,18 @@ console.log(newlogoutdata,"newlogoutdata")
 
 console.log(loginvalue,"kush")
 
+
+    
+let kush =(k)=>{
+    console.log("first@@@@@@@@@@",k)
+    setnewState(k)  
+  }
+
   return (
     <div>
+
     <BrowserRouter>
+
   {/* { logoutvalue ==="logout"? <Login1 loginfncdata={loginfncdata}/>:
 
 loginvalue==="loginsuccess"?
@@ -134,14 +144,18 @@ loginvalue==="loginsuccess"?
      {console.log(loginvalue,"klklklklkl")}
       {logoutvalue ==="logout"? <Login1 loginfncdata={loginfncdata}/>:
       loginvalue==="loginsuccess"?<>
-      <Nav logoutfun={logoutfun}/>
+      <Nav logoutfun={logoutfun}
+           kush={kush}
+      />
      <div style={{display:"grid",gridTemplateColumns:"0.4fr 1fr 0.1fr"}}>
      
-      <Sidebar/>
+      <Sidebar
+       newState={newState}
+      />
       <Middlebars/>
      </div>
      </>:null}
-    
+
     </BrowserRouter>
     
     </div>

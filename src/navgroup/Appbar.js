@@ -14,10 +14,13 @@ import InputBase from '@mui/material/InputBase';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import  { useState,useEffect } from "react";
 
 
 
-export default function ButtonAppBar({logoutfun}) {
+export default function ButtonAppBar({logoutfun,kush}) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
     const SearchIconWrapper = styled('div')(({ theme }) => ({
         padding: theme.spacing(0, 2),
         height: '100%',
@@ -70,12 +73,18 @@ export default function ButtonAppBar({logoutfun}) {
 
 
 //onClick={()=>logoutfun(false)}
+const luv =()=>{
+  setIsSidebarOpen(!isSidebarOpen)
+  kush(isSidebarOpen)
 
+}
 
+// useEffect(()=>{
 
+// },[])
   return (
     <Box  >
-      <AppBar position="static" >
+      <AppBar position="fixed" >
         <Toolbar sx={{ ml:3 }}>
             <ImageAvatars sx={{ml:3}}/>
         <Typography variant="h6" component="div" sx={{ ml:3}}>
@@ -87,12 +96,13 @@ export default function ButtonAppBar({logoutfun}) {
             color="inherit"
             aria-label="menu"
             sx={{ ml:5 }}
+            onClick={luv}
           >
             <MenuIcon />
           </IconButton>
          
           {/* <Button color="inherit">Login</Button> */}
-         <Box sx={{display:"flex",justifyContent:"space-evenly",width:"18.75rem",marginLeft:`${matches?'58%':matches1?"50%":matches2?"40%":matches3?"30%":matches4?"20%":matches5?"10%":matches6?"5%":""}`,backgroundColor:"",alignItems:"center"}}>
+         <Box sx={{display:"flex",justifyContent:"space-evenly",width:"18.75rem",marginLeft:`${matches?'58%':matches1?"55%":matches2?"55%":matches3?"50%":matches4?"45%":matches5?"42%":matches6?"40%":"37%"}`,backgroundColor:"",alignItems:"center"}}>
          <Search>
             <SearchIconWrapper>
               <SearchIcon />

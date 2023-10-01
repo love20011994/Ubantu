@@ -1,9 +1,11 @@
 import { useState } from "react"
 // import '../sidebar/sidebar.css'
 import { Link } from "react-router-dom"
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 export default function Sidebaritem({item}){
     const [open, setOpen] = useState(false)
-    
+
 
     
     if(item.childrens){
@@ -14,7 +16,7 @@ export default function Sidebaritem({item}){
                         { item.icon && <i className={item.icon}></i> }
                         {item.title}    
                     </span> 
-                    <i className="bi-chevron-down toggle-btn" onClick={() => setOpen(!open)}>---</i>
+                    <i className="bi-chevron-down toggle-btn" onClick={() => setOpen(!open)}><ArrowForwardIosIcon/></i>
                 </div>
                 <div className="sidebar-content">
                     { item.childrens.map((child, index) => <Sidebaritem key={index} item={child} />) }

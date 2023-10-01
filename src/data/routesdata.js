@@ -1,5 +1,7 @@
 
 import Logindata from "../components/Logindata"
+import Newpayment from "../components/Newpayment"
+import PaymentGateway from "../components/PaymentGateway"
 import Register from "../components/Register"
 import Tabledata from "../components/Tabledata"
 import ObjectForm from "../Form/Basicform"
@@ -27,5 +29,17 @@ import ObjectForm from "../Form/Basicform"
         "icon": "bi-info-circle-fill",
         "path": "/login",
         "element": <Logindata />
+    },
+    {
+        "title": "About",
+        "icon": "bi-info-circle-fill",
+        "path": "/love",
+        "element": <Newpayment />
+    },
+    {
+        "title": "About",
+        "icon": "bi-info-circle-fill",
+        "path": "/love1",
+        "element": <PaymentGateway />
     }
 ]

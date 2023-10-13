@@ -135,7 +135,7 @@
         ]
     },
     {
-        "title": "PaymentGateWay",
+        "title": "Pgateway",
         "icon": "bi-view-list",
         "childrens": [
             {

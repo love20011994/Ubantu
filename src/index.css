@@ -125,7 +125,7 @@ body{
 }
 
 .sidebar{
-  width: 260px;
+  width: 60%;
   flex-shrink: 0;
   background-color: rgba(22, 22, 22, 1);
   height: 91vh;

@@ -18,6 +18,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 function PaymentGateway() {
   const [productdata,setproductdata] = useState([])
+  const [addcart,setaddcart] = useState([])
+  const [newItem, setNewItem] = useState('');
 
  const data = async()=>{
    const data1 = await axios.get("https://fakestoreapi.com/products")
@@ -31,6 +33,17 @@ function PaymentGateway() {
   useEffect(()=>{
     data()
   },[])
+const additem =(k)=>{
+const itemobg ={
+  id:k.id,
+  price:k.price,
+  image:k.image
+}
+console.log(itemobg,"ite,,,,")
+setaddcart([...addcart,itemobg])
+
+}
+console.log(addcart,"addcart")
   return (
     <div style={{backgroundColor:"",marginTop:"8rem",marginRight:"2rem"}}>
       <Carousel 
@@ -58,9 +71,19 @@ function PaymentGateway() {
         
           
           {productdata.map((p)=>{
-            return( <Grid  xs={12} sm={6} md={4} lg={4} xl={4}  >
-            <div style={{ width:"275px",height:"275px",display:"flex",justifyContent:"center", alignItems:"center",backgroundColor:"",marginBottom:"50px",padding:"50px"}}>
+            return( <Grid  xs={12} sm={6} md={4} lg={4} xl={4} style={{backgroundColor:""}} >
+              <div style={{backgroundColor:"",marginBottom:"",border:""}}>
+            <div style={{ width:"275px",height:"275px",display:"flex",justifyContent:"center", alignItems:"center",backgroundColor:"",marginBottom:"",padding:"50px"}}>
             <img width={150} height={150} src={p.image}/>
+
+            </div>
+           <div style={{marginLeft:"20px",marginBottom:"25px"}}>
+           <p style={{color:"black",marginTop:"",marginLeft:""}}>{`${p.category}`}</p>
+
+<p style={{color:"black",marginTop:"",marginLeft:""}}>{`price $ ${p.price}`}</p><br></br>
+<button onClick={()=>{additem(p)}}    style={{backgroundColor:"yellow",width:"100%",height:"50px",border:"none"}}>Add</button>
+
+           </div>
             </div>
         </Grid>
             )
@@ -70,6 +93,7 @@ function PaymentGateway() {
        
         </Grid>
     </Box>
+    
     </div>
   )
 }

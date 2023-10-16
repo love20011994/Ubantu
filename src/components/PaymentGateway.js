@@ -46,6 +46,7 @@ setaddcart([...addcart,itemobg])
 console.log(addcart,"addcart")
   return (
     <div style={{backgroundColor:"",marginTop:"8rem",marginRight:"2rem"}}>
+      <div  style={{position:"relative"}}>
       <Carousel 
       showStatus={false}
       showIndicators={false}
@@ -54,7 +55,7 @@ console.log(addcart,"addcart")
       infiniteLoop
       >
                 <div>
-                    <img src="https://cdn.pixabay.com/photo/2023/09/15/00/17/pink-8253910_1280.jpg" />
+                    <img src="https://cdn.pixabay.com/photo/2016/07/23/23/02/lavenders-1537694_1280.jpg" height={550}/>
                     {/* <p className="legend">Legend 1</p> */}
                 </div>
                 <div>
@@ -66,7 +67,9 @@ console.log(addcart,"addcart")
                     {/* <p className="legend">Legend 3</p> */}
                 </div>
             </Carousel>
-            <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:"50px",marginLeft:"100px"}}>
+            <div style={{height:"150px",width:"100%",backgroundColor:"#fff", position:"absolute",bottom:"0.437rem",opacity:0.5}}></div>
+            </div>
+            <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"550px",marginLeft:"40px",position:"relative",bottom:"100px"}}>
       <Grid container columnSpacing={4} rowSpacing={4} >
         
           

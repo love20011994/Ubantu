@@ -18,10 +18,11 @@ import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
+import { useNavigate } from 'react-router-dom';
 
 
 
-export default function ButtonAppBar({logoutfun,kush}) {
+export default function ButtonAppBar({logoutfun,kush,addcartdata}) {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
 
     const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -99,6 +100,8 @@ const handleMenue=(id)=>{
      handleCloseUserMenu()
 
 }
+const navigate = useNavigate();
+
 
   return(
   <Box>
@@ -130,13 +133,13 @@ const handleMenue=(id)=>{
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Box>
-          <NotificationsOutlinedIcon/>
+          <Box onClick={()=>{navigate('/kal')}}>
+          <NotificationsOutlinedIcon />
 
          <div style={{position:"relative"}}>
-         <div style={{backgroundColor:"yellow",height:"15px",width:"15px",borderRadius:"20px",
+         <div style={{backgroundColor:`${addcartdata.length===0?"":"yellow"}`,height:"15px",width:"15px",borderRadius:"20px",
          display:"flex",justifyContent:"center",alignItems:"center",position:"relative",position:"absolute",bottom:"20px",left:"12px"}}>          
-          <span style={{color:"black",fontWeight:"200",fontSize:"15px"}}>5</span></div>
+          <span style={{color:"black",fontWeight:"200",fontSize:"15px",display:`${addcartdata.length===0?"none":""}`}}>{addcartdata.length}</span></div>
          </div>
 
           </Box>

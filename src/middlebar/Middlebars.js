@@ -5,9 +5,12 @@ import {    BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import routes from "../data/sidebar.json"
 import { routesdatas } from '../data/routesdata';
 import PaymentGateway from '../components/PaymentGateway';
+import Checkoutitem from '../components/Checkoutitem';
 
 
-function Middlebars({notificationfnc1}) {
+function Middlebars({notificationfnc1,addcartdata}) {
+
+console.log(addcartdata,"kuuuuuuuuu")
   return (<div style={{backgroundColor:""}}>
 {/* <Router> */}
       <Routes>
@@ -17,16 +20,22 @@ function Middlebars({notificationfnc1}) {
         // console.log(route.element,"router")
        if(route.title==="paypal"){
        return <Route path='/love1' element={<PaymentGateway notificationfnc1={notificationfnc1}/>}/>
-
-       }
-       return <Route
-          // key={index}
-          path= {route.path}
-          element=  {route.element}
-          
-        />
+      }
+      
+      
+     
+     else{
+      return <Route
+      // key={index}
+      path= {route.path}
+      element=  {route.element}
+      
+    />
+     }
        
       })} 
+                <Route path='/kal' element={<Checkoutitem addcartdata={addcartdata}/>}/>
+
 
             </Routes> 
 

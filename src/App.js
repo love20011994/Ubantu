@@ -18,6 +18,7 @@ function App() {
   const[loginvalue,setloginvalue] = useState(localStorage.getItem('login'))
   const[logoutvalue,setlogoutvalue] = useState(localStorage.getItem('logout'))
   const[newState,setnewState] = useState(true)
+  const[addcartdata,setaddcartdata] = useState([])
 
 
   const loginfncdata=(data)=>{
@@ -125,6 +126,7 @@ let kush =(k)=>{
   }
   const notificationfnc1 =(m)=>{
    console.log(m,"mmmmmmmmmmmmmmmmm")
+   setaddcartdata(m)
   }
 
   return (
@@ -149,13 +151,17 @@ loginvalue==="loginsuccess"?
       loginvalue==="loginsuccess"?<>
       <Nav logoutfun={logoutfun}
            kush={kush}
+           addcartdata ={addcartdata}
       />
      <div style={{display:"grid",gridTemplateColumns:"0.4fr 1fr 0.1fr"}}>
      
       <Sidebar
        newState={newState}
       />
-      <Middlebars notificationfnc1={notificationfnc1}/>
+      <Middlebars 
+       notificationfnc1={notificationfnc1}
+         addcartdata={addcartdata}
+      />
      </div>
      </>:null}
 

@@ -54,7 +54,7 @@ useEffect(()=>{
 
   notifnc()
 
-},[])
+},[addcart])
 
   return (
     <div style={{backgroundColor:"",marginTop:"8rem",marginRight:"2rem"}}>
@@ -108,7 +108,7 @@ useEffect(()=>{
        
         </Grid>
     </Box>
-    <button onClick={()=>notificationfnc1(addcart)}>button</button>
+    {/* <button onClick={()=>notificationfnc1(addcart)}>button</button> */}
 
     </div>
   )

@@ -5,6 +5,7 @@ import PaymentGateway from "../components/PaymentGateway"
 import Register from "../components/Register"
 import Tabledata from "../components/Tabledata"
 import ObjectForm from "../Form/Basicform"
+let notificationfnc1;
  export const routesdatas=[
     {
         title: "Home",
@@ -37,9 +38,9 @@ import ObjectForm from "../Form/Basicform"
         "element": <Newpayment />
     },
     {
-        "title": "About",
+        "title": "paypal",
         "icon": "bi-info-circle-fill",
         "path": "/love1",
-        "element": <PaymentGateway />
+        "element": <PaymentGateway notificationfnc1={notificationfnc1}/>
     }
 ]

@@ -133,6 +133,12 @@ const handleMenue=(id)=>{
           <Box>
           <NotificationsOutlinedIcon/>
 
+         <div style={{position:"relative"}}>
+         <div style={{backgroundColor:"yellow",height:"15px",width:"15px",borderRadius:"20px",
+         display:"flex",justifyContent:"center",alignItems:"center",position:"relative",position:"absolute",bottom:"20px",left:"12px"}}>          
+          <span style={{color:"black",fontWeight:"200",fontSize:"15px"}}>5</span></div>
+         </div>
+
           </Box>
           <Box>
           {/* <AccountCircleIcon  /> */}

@@ -123,6 +123,9 @@ let kush =(k)=>{
     console.log("first@@@@@@@@@@",k)
     setnewState(k)  
   }
+  const notificationfnc1 =(m)=>{
+   console.log(m,"mmmmmmmmmmmmmmmmm")
+  }
 
   return (
     <div>
@@ -152,7 +155,7 @@ loginvalue==="loginsuccess"?
       <Sidebar
        newState={newState}
       />
-      <Middlebars/>
+      <Middlebars notificationfnc1={notificationfnc1}/>
      </div>
      </>:null}
 

@@ -16,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
-function PaymentGateway() {
+function PaymentGateway({notificationfnc1}) {
   const [productdata,setproductdata] = useState([])
   const [addcart,setaddcart] = useState([])
   const [newItem, setNewItem] = useState('');
@@ -44,6 +44,18 @@ setaddcart([...addcart,itemobg])
 
 }
 console.log(addcart,"addcart")
+
+const notifnc =()=>{
+  notificationfnc1(addcart)
+
+}
+
+useEffect(()=>{
+
+  notifnc()
+
+},[])
+
   return (
     <div style={{backgroundColor:"",marginTop:"8rem",marginRight:"2rem"}}>
       <div  style={{position:"relative"}}>
@@ -75,7 +87,7 @@ console.log(addcart,"addcart")
           
           {productdata.map((p)=>{
             return( <Grid  xs={12} sm={6} md={4} lg={4} xl={4} style={{backgroundColor:""}} >
-              <div style={{backgroundColor:"",marginBottom:"",border:""}}>
+              <div  style={{backgroundColor:"",marginBottom:"",border:""}}>
             <div style={{ width:"275px",height:"275px",display:"flex",justifyContent:"center", alignItems:"center",backgroundColor:"",marginBottom:"",padding:"50px"}}>
             <img width={150} height={150} src={p.image}/>
 
@@ -96,7 +108,8 @@ console.log(addcart,"addcart")
        
         </Grid>
     </Box>
-    
+    <button onClick={()=>notificationfnc1(addcart)}>button</button>
+
     </div>
   )
 }

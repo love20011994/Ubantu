@@ -26,16 +26,22 @@ console.log(addcartdata?.length,"length")
    }
     let totalPrice=0;
 
-    addcartdata.forEach(element => {
+    nav.forEach(element => {
               totalPrice+=element.price
     });
 
 
-    console.log(totalPrice.toFixed(2))
+const luv12 =(k,s)=>{
+    const deleteitem = nav.filter((p,q)=>{
+      return q!==s
+    })
+    setNav(deleteitem)
+}
+
   return (
     <div className='checkoutbill'>
       <div>
-         {addcartdata.map((p)=>{
+         {nav.map((p,index)=>{
             return( <Grid  xs={12} sm={6} md={4} lg={4} xl={4} style={{backgroundColor:""}} >
               <div  style={{backgroundColor:"",marginBottom:"",border:""}}>
             <div style={{ width:"275px",height:"275px",display:"flex",justifyContent:"center", alignItems:"center",backgroundColor:"",marginBottom:"",padding:"50px"}}>
@@ -48,14 +54,16 @@ console.log(addcartdata?.length,"length")
             <p style={{color:"black",marginTop:"",marginLeft:""}}>{`price $ ${p.price}`}</p><br></br>
 
            </div>
-           <button style={{backgroundColor:"yellow"}}>remove from cart</button>
             </div>
+                   <div>
+                    <button onClick={()=>{luv12(p,index)}}>removeItem</button>
+                   </div>
         </Grid>
             )
           })}</div>
          <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"800px",width:"400px"}}>
          <div style={{height:"250px",width:"250px",backgroundColor:"yellow",paddingLeft:"50px",paddingTop:"100px",borderRadius:"15PX"}}>
-         <h4 style={{color:"black"}}>Total Item -  {addcartdata.length}</h4><br/>
+         <h4 style={{color:"black"}}>Total Item -  {nav.length}</h4><br/>
 
           <h4 style={{color:"black"}}> Total Price-{totalPrice.toFixed(2)} </h4><br/>
           <button>Pay Bill</button>

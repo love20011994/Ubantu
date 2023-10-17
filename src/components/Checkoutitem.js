@@ -1,11 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Grid from '@mui/material/Grid';
+import { useNavigate } from 'react-router-dom';
+import './component.css'
+
 
 
 function Checkoutitem({addcartdata}) {
-    console.log(addcartdata,"########################")
+const[nav ,setNav]=useState([])
+   const navigate1 = useNavigate()
+
+  //  const funkus=()=>{
+  //   navigate1("/love1")
+  //  }
+  useEffect(()=>{
+      setNav(addcartdata)
+  },[])
+console.log(addcartdata?.length,"length")
+   if(nav?.length===0){
+   
+    console.log("first")
+        navigate1("/love1")
+
+    // funkus()
+
+   }
+    let totalPrice=0;
+
+    addcartdata.forEach(element => {
+              totalPrice+=element.price
+    });
+
+
+    console.log(totalPrice.toFixed(2))
   return (
-    <div>
+    <div className='checkoutbill'>
+      <div>
          {addcartdata.map((p)=>{
             return( <Grid  xs={12} sm={6} md={4} lg={4} xl={4} style={{backgroundColor:""}} >
               <div  style={{backgroundColor:"",marginBottom:"",border:""}}>
@@ -16,14 +45,23 @@ function Checkoutitem({addcartdata}) {
            <div style={{marginLeft:"20px",marginBottom:"25px"}}>
            <p style={{color:"black",marginTop:"",marginLeft:""}}>{`${p.category}`}</p>
 
-<p style={{color:"black",marginTop:"",marginLeft:""}}>{`price $ ${p.price}`}</p><br></br>
-{/* <button onClick={()=>{additem(p)}}    style={{backgroundColor:"yellow",width:"100%",height:"50px",border:"none"}}>Add</button> */}
+            <p style={{color:"black",marginTop:"",marginLeft:""}}>{`price $ ${p.price}`}</p><br></br>
 
            </div>
+           <button style={{backgroundColor:"yellow"}}>remove from cart</button>
             </div>
         </Grid>
             )
-          })}
+          })}</div>
+         <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"800px",width:"400px"}}>
+         <div style={{height:"250px",width:"250px",backgroundColor:"yellow",paddingLeft:"50px",paddingTop:"100px",borderRadius:"15PX"}}>
+         <h4 style={{color:"black"}}>Total Item -  {addcartdata.length}</h4><br/>
+
+          <h4 style={{color:"black"}}> Total Price-{totalPrice.toFixed(2)} </h4><br/>
+          <button>Pay Bill</button>
+
+         </div>
+      </div>
     </div>
   )
 }

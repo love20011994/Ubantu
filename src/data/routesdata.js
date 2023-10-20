@@ -3,6 +3,7 @@ import Checkoutitem from "../components/Checkoutitem"
 import Logindata from "../components/Logindata"
 import Newpayment from "../components/Newpayment"
 import PaymentGateway from "../components/PaymentGateway"
+import Paymentsucess from "../components/Paymentsucess"
 import Register from "../components/Register"
 import Tabledata from "../components/Tabledata"
 import ObjectForm from "../Form/Basicform"
@@ -54,4 +55,12 @@ let notificationfnc1;
     //     "element": <Checkoutitem addcartdata={addcartdata}/>
     //     //  Checkoutitem
     // }
+
+    {
+        "title": "paymentsucess",
+        "icon": "bi-info-circle-fill",
+        "path": "/paymentsucess",
+        "element": <Paymentsucess/>
+        
+    }
 ]

@@ -29,16 +29,18 @@ console.log(statedata,"statedata")
     {  statedata? <div className='' style={{}}><Logindata loginfncdata={loginfncdata}
     loginregisterdata={loginregisterdata}
     />
-    <div>
+    {/* <div>
       
     
-    </div>
+    </div> */}
 
     </div>:
-<div style={{height:"100vh",backgroundColor:"red",display:"flex",justifyContent:"center",alignItems:"center",backgroundColor:"lightblue"}}>
-<div className='' style={{width:"50%",height:"100%"}}><Register /></div>
 
-</div>
+<div className='' style={{width:"100%",height:"100%"}}>
+  <Register />
+  </div>
+
+
 }
         
       </div>

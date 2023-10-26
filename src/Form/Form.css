@@ -7,17 +7,18 @@
     border: none;
     cursor: pointer;
     height: 50px;
-    width: 150px;
-    margin-left: 20px;
+    width: 70%;
+    margin-left: 35px;
   }
 
   .input-box {
-    width: 200px;
+    width: 80%;
     height: 30px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    margin-left: 25px;
   }
   
   .input-box:focus {

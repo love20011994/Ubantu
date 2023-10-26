@@ -5,10 +5,12 @@ import axios from '../Allbaseurl';
 
 // import axios from 'axios';
 
-function Logindata({loginfncdata}) {
+function Logindata({loginfncdata,loginregisterdata}) {
     const [email, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const[error,setError]= useState(false)
+    // const[Resisterdata,setResisterdata] = useState(true)
+
 
     const handleSubmit = async(e) => {
       e.preventDefault();
@@ -30,12 +32,18 @@ function Logindata({loginfncdata}) {
             setError(true)
          }
     }
+    const newresisterdata =()=>{
+      // setResisterdata(false)
+      loginregisterdata(false)
+    }
+    
   return (
-      <div >
-      <form style={{display:"flex",flexDirection:"column",height:"200px"}} onSubmit={handleSubmit}>
+    <div style={{height:"100%",width:"100%",backgroundColor:"green"}}>
+      <div style={{height:"70%",width:"100%",display:"flex",justifyContent:"center",alignItems:"center",marginTop:""}}>
+      <form style={{display:"flex",flexDirection:"column",height:"100%",width:"50%",alignItems:"center",justifyContent:"center"}} onSubmit={handleSubmit}>
       
     
-        <input className='input-box'
+        <input style={{width:"100%"}} className='input-box'
         placeholder='Login'
           type="text"
           value={email}
@@ -46,7 +54,7 @@ function Logindata({loginfncdata}) {
       
       <br />
      
-        <input className='input-box'
+        <input style={{width:"100%"}} className='input-box'
         placeholder='Password'
          type="text"
           value={password}
@@ -54,8 +62,15 @@ function Logindata({loginfncdata}) {
         />
           {error&&<p style={{color:"red"}}>invailid data</p>}
           <br />
-      <button className='button' type="submit">Submit</button>
+      <button style={{width:"75%",height:"2rem",backgroundColor:"blue"}} type="submit"><span style={{fontSize:"1rem"}}>Submit</span></button>
+      
     </form>
+    
+    </div>
+    <div style={{marginLeft:"25%",backgroundColor:""}}>
+    <p style={{color:"blue"}}>IF not login Resister here</p>
+      <button style={{}} onClick={newresisterdata}>Register</button>
+    </div>
     </div>
   )
 }

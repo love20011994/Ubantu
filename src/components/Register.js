@@ -63,7 +63,7 @@ function Register({luv}) {
       
      
   return (
-    <div style={{backgroundColor:"lightblue",display:"flex",justifyContent:"center",alignItems:"center",height:"500px",width:"400px",marginLeft:"230px",marginTop:"30px"}} >
+    <div style={{backgroundColor:"lightblue",display:"flex",justifyContent:"center",alignItems:"center",height:"400px",width:"100%",marginLeft:"230px",marginTop:"30px"}} >
  {/* <div>
      <button onClick={()=>luv()}>Login page</button>
 

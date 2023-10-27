@@ -38,12 +38,12 @@ function Logindata({loginfncdata,loginregisterdata}) {
     }
     
   return (
-    <div style={{height:"100%",width:"100%",backgroundColor:"green"}}>
-      <div style={{height:"70%",width:"100%",display:"flex",justifyContent:"center",alignItems:"center",marginTop:""}}>
-      <form style={{display:"flex",flexDirection:"column",height:"100%",width:"50%",alignItems:"center",justifyContent:"center"}} onSubmit={handleSubmit}>
+    <div style={{height:"100vh",width:"100%",backgroundColor:"lightblue"}}>
+      <div style={{height:"100%",width:"100%",display:"flex",justifyContent:"center",alignItems:"center",marginTop:""}}>
+      <form style={{display:"flex",flexDirection:"column",height:"80%",width:"85%",alignItems:"center",justifyContent:"center"}} onSubmit={handleSubmit}>
       
     
-        <input style={{width:"100%"}} className='input-box'
+        <input style={{width:"52%"}} className='input-box'
         placeholder='Login'
           type="text"
           value={email}
@@ -54,7 +54,7 @@ function Logindata({loginfncdata,loginregisterdata}) {
       
       <br />
      
-        <input style={{width:"100%"}} className='input-box'
+        <input style={{width:"52%"}} className='input-box'
         placeholder='Password'
          type="text"
           value={password}
@@ -62,15 +62,14 @@ function Logindata({loginfncdata,loginregisterdata}) {
         />
           {error&&<p style={{color:"red"}}>invailid data</p>}
           <br />
-      <button style={{width:"75%",height:"2rem",backgroundColor:"blue"}} type="submit"><span style={{fontSize:"1rem"}}>Submit</span></button>
-      
+      <button className="loginbutton" placeholder='button' style={{width:"36%",height:"2rem",backgroundColor:"",border:"none",outline:"none",cursor:"pointer",marginLeft:"20px"}} type="submit"><span style={{fontSize:"0.8rem",padding:"3px"}}>submit</span></button><br></br>
+      <br></br><br></br><br></br>
+      <span style={{color:"blue",cursor:"pointer"}} onClick={newresisterdata}>IF not login Resister here</span>
+
     </form>
     
     </div>
-    <div style={{marginLeft:"25%",backgroundColor:""}}>
-    <p style={{color:"blue"}}>IF not login Resister here</p>
-      <button style={{}} onClick={newresisterdata}>Register</button>
-    </div>
+    
     </div>
   )
 }

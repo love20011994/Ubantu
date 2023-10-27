@@ -26,7 +26,7 @@ console.log(statedata,"statedata")
     <img src={url1} height="100%" width="100%"/>
 
     </div>
-    {  statedata? <div className='' style={{}}><Logindata loginfncdata={loginfncdata}
+    {  statedata? <div className='' style={{width:"100%",height:"100%"}}><Logindata loginfncdata={loginfncdata}
     loginregisterdata={loginregisterdata}
     />
     {/* <div>

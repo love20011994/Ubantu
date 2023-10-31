@@ -158,10 +158,12 @@ loginvalue==="loginsuccess"?
       <Sidebar
        newState={newState}
       />
+      <div style={{}}>
       <Middlebars 
        notificationfnc1={notificationfnc1}
          addcartdata={addcartdata}
       />
+      </div>
      </div>
      </>:null}
 

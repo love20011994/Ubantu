@@ -135,11 +135,11 @@
         ]
     },
     {
-        "title": "Pgateway",
+        "title": "Shoping",
         "icon": "bi-view-list",
         "childrens": [
             {
-                "title": "paymemt",
+                "title": "shoping Cart",
                 "path": "/love1"
             }
            

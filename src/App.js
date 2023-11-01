@@ -153,7 +153,7 @@ loginvalue==="loginsuccess"?
            kush={kush}
            addcartdata ={addcartdata}
       />
-     <div style={{display:"grid",gridTemplateColumns:"0.4fr 1fr 0.1fr"}}>
+     <div style={{display:"grid",gridTemplateColumns:"0.5fr 1fr 0.1fr"}}>
      
       <Sidebar
        newState={newState}

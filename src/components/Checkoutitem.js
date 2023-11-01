@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Grid from '@mui/material/Grid';
 import { useNavigate } from 'react-router-dom';
 import './component.css'
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+
 import axios from 'axios';
 
 
@@ -77,37 +80,46 @@ const razor = new window.Razorpay(options);
 
 
   return (
-    <div className='checkoutbill'>
-      <div>
+    <div style={{display:"grid",gridTemplateColumns:"2fr 2fr",backgroundColor:"#ffff"}} className='checkoutbill'>
+      <div style={{backgroundColor:""}}>
          {nav.map((p,index)=>{
-            return( <Grid  xs={12} sm={6} md={4} lg={4} xl={4} style={{backgroundColor:""}} >
+            return( 
+            <Grid  xs={12} sm={6} md={4} lg={4} xl={4} style={{backgroundColor:""}} >
               <div  style={{backgroundColor:"",marginBottom:"",border:""}}>
             <div style={{ width:"275px",height:"275px",display:"flex",justifyContent:"center", alignItems:"center",backgroundColor:"",marginBottom:"",padding:"50px"}}>
             <img width={150} height={150} src={p.image}/>
 
             </div>
            <div style={{marginLeft:"20px",marginBottom:"25px"}}>
-           <p style={{color:"black",marginTop:"",marginLeft:""}}>{`${p.category}`}</p>
+           <p style={{color:"black",marginTop:"",marginLeft:"125px"}}>{`${p.category}`}</p>
 
-            <p style={{color:"black",marginTop:"",marginLeft:""}}>{`price $ ${p.price}`}</p><br></br>
-
+            <p style={{color:"black",marginTop:"",marginLeft:"125px",marginBottom:"50px"}}>{`price $ ${p.price}`}</p><br></br>
+            <div style={{marginLeft:"100px"}}>
+                    <button  style ={{backgroundColor:"yellow",height:"50px",width:"150px",border:"none",borderRadius:"5px"}}onClick={()=>{luv12(p,index)}}>removeItem</button>
+                   </div>
            </div>
             </div>
-                   <div>
-                    <button onClick={()=>{luv12(p,index)}}>removeItem</button>
-                   </div>
+                  
         </Grid>
             )
-          })}</div>
-         <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"800px",width:"400px"}}>
-         <div style={{height:"250px",width:"250px",backgroundColor:"yellow",paddingLeft:"50px",paddingTop:"100px",borderRadius:"15PX"}}>
+          })}
+          </div>
+      <div>  <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"800px",width:"400px",backgroundColor:"",position:"fixed"}}>
+     <Box sx={{backgroundColor:"lightblue",padding:"3px",borderRadius:"15PX"}}>
+     <Paper elevation={0} />
+      <div style={{height:"250px",width:"250px",backgroundColor:"#fff",paddingLeft:"50px",paddingTop:"100px",borderRadius:"15PX"}}>
          <h4 style={{color:"black"}}>Total Item -  {nav.length}</h4><br/>
 
           <h4 style={{color:"black"}}> Total Price-{totalPrice.toFixed(2)} </h4><br/>
-          <button onClick={()=>{billpayment(totalPrice)}}>Pay Bill</button>
+          <button style={{backgroundColor:"lightseagreen",height:"50px",width:"150px",border:"none",cursor:"pointer",borderRadius:"5px"}} onClick={()=>{billpayment(totalPrice)}}>Payment</button>
 
          </div>
+       <Paper />
+     </Box>
+        
       </div>
+      </div> 
+      
     </div>
   )
 }

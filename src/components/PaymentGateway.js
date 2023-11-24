@@ -56,6 +56,15 @@ useEffect(()=>{
 
 },[addcart])
 
+const filterItems=(e)=>{
+  const filerbyprice = productdata.filter((item)=>{
+   const price =parseInt(e.target.value)
+              return item.price<price
+  })
+  console.log(filerbyprice)
+  setproductdata(filerbyprice)
+}
+
   return (
     <div style={{backgroundColor:"",marginTop:"8rem",marginRight:"2rem"}}>
       <div  style={{position:"relative"}}>
@@ -82,6 +91,14 @@ useEffect(()=>{
             <div style={{height:"150px",width:"100%",backgroundColor:"#fff", position:"absolute",bottom:"0.437rem",opacity:0.5}}></div>
             </div>
             <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"550px",marginLeft:"40px",position:"relative",bottom:"100px"}}>
+            <div>
+      <select  onChange={filterItems}>
+        <option value={50}>0-100</option>
+        <option value={200}>0-200</option>
+        <option value={1000}>0-10000</option>
+      </select>
+      <p>{`You selected range`}</p>
+    </div>
       <Grid container columnSpacing={4} rowSpacing={4} >
         
           
@@ -110,6 +127,7 @@ useEffect(()=>{
     </Box>
     {/* <button onClick={()=>notificationfnc1(addcart)}>button</button> */}
 
+    
     </div>
   )
 }

@@ -105,9 +105,9 @@ const razor = new window.Razorpay(options);
           })}
           </div>
       <div>  <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"800px",width:"400px",backgroundColor:"",position:"fixed"}}>
-     <Box sx={{backgroundColor:"lightblue",padding:"3px",borderRadius:"15PX"}}>
+     <Box sx={{backgroundColor:"",padding:"3px",borderRadius:"15PX"}}>
      <Paper elevation={0} />
-      <div style={{height:"250px",width:"250px",backgroundColor:"#fff",paddingLeft:"50px",paddingTop:"100px",borderRadius:"15PX"}}>
+      <div style={{height:"250px",width:"250px",backgroundColor:"#f8f8f8f8",paddingLeft:"50px",paddingTop:"100px",borderRadius:"15PX",border:"1px solid",boxShadow:"3px 3px lightgray"}}>
          <h4 style={{color:"black"}}>Total Item -  {nav.length}</h4><br/>
 
           <h4 style={{color:"black"}}> Total Price-{totalPrice.toFixed(2)} </h4><br/>

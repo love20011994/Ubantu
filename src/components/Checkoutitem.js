@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import './component.css'
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-
 import axios from 'axios';
 
 
@@ -116,7 +115,7 @@ console.log(nav,"navvvvvvvvvvvvvvvvvvvvvv")
       <div>  <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"800px",width:"400px",backgroundColor:"",position:"fixed"}}>
      <Box sx={{backgroundColor:"",padding:"3px",borderRadius:"15PX"}}>
      <Paper elevation={0} />
-      <div style={{height:"250px",width:"250px",backgroundColor:"#f8f8f8f8",paddingLeft:"50px",paddingTop:"100px",borderRadius:"15PX",border:"1px solid",boxShadow:"3px 3px lightgray"}}>
+      <div style={{height:"250px",width:"250px",backgroundColor:"#f8f8f8f8",paddingLeft:"50px",paddingTop:"100px",borderRadius:"15PX",border:"1px solid",boxShadow:"1px 1px 10px lightgray,-1px -1px 10px lightgray"}}>
          <h4 style={{color:"black"}}>Total Item -  {nav.length}</h4><br/>
 
           <h4 style={{color:"black"}}> Total Price-{totalPrice.toFixed(2)} </h4><br/>

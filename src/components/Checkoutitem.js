@@ -103,7 +103,7 @@ console.log(nav,"navvvvvvvvvvvvvvvvvvvvvv")
 
             <p style={{color:"black",marginTop:"",marginLeft:"125px",marginBottom:"50px"}}>{`price $ ${p.price}`}</p><br></br>
             <div style={{marginLeft:"100px"}}>
-                    <button  style ={{backgroundColor:"yellow",height:"50px",width:"150px",border:"none",borderRadius:"5px"}}onClick={()=>{luv12(p,index)}}>removeItem</button>
+                    <button  style ={{backgroundColor:"yellow",height:"50px",width:"150px",border:"none",borderRadius:"5px"}}onClick={()=>{luv12(p,index)}}>removeItem1</button>
                    </div>
            </div>
             </div>

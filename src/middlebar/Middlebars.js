@@ -8,7 +8,7 @@ import PaymentGateway from '../components/PaymentGateway';
 import Checkoutitem from '../components/Checkoutitem';
 
 
-function Middlebars({notificationfnc1,addcartdata}) {
+function Middlebars({notificationfnc1,addcartdata,navdataprops}) {
 
 console.log(addcartdata,"kuuuuuuuuu")
   return (<div style={{backgroundColor:""}}>
@@ -34,7 +34,9 @@ console.log(addcartdata,"kuuuuuuuuu")
      }
        
       })} 
-                <Route path='/kal' element={<Checkoutitem addcartdata={addcartdata}/>}/>
+                <Route path='/kal' element={<Checkoutitem addcartdata={addcartdata}
+                navdataprops={navdataprops}
+                />}/>
 
 
             </Routes> 

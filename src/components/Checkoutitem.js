@@ -9,8 +9,9 @@ import axios from 'axios';
 
 
 
-function Checkoutitem({addcartdata}) {
+function Checkoutitem({addcartdata,navdataprops}) {
 const[nav ,setNav]=useState([])
+// const[nav1,setnav1] =useState([])
    const navigate1 = useNavigate()
 
    const RAZORPAY_API_KEY="rzp_test_SQwn52IkHCvsn0"
@@ -37,12 +38,20 @@ console.log(addcartdata?.length,"length")
     });
 
 
-const luv12 =(k,s)=>{
+const luv12 =async(k,s)=>{
+
     const deleteitem = nav.filter((p,q)=>{
       return q!==s
     })
     setNav(deleteitem)
+    // setnav1(nav.length)
+   
 }
+useEffect(()=>{
+  navdataprops(nav)
+
+},[nav])
+
 const billpayment=async(amount)=>{
   const orderdata= await axios.post('http://localhost:5000/api/products/checkout',{amount})
 
@@ -77,7 +86,7 @@ const razor = new window.Razorpay(options);
 
 }
 
-
+console.log(nav,"navvvvvvvvvvvvvvvvvvvvvv")
 
   return (
     <div style={{display:"grid",gridTemplateColumns:"2fr 2fr",backgroundColor:"#ffff"}} className='checkoutbill'>

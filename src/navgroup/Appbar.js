@@ -22,7 +22,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export default function ButtonAppBar({logoutfun,kush,addcartdata}) {
+export default function ButtonAppBar({logoutfun,kush,addcartdata,newnavprops}) {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
 
     const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -102,7 +102,7 @@ const handleMenue=(id)=>{
 }
 const navigate = useNavigate();
 
-
+console.log(addcartdata,"addcartdata.lllllllllllleeeeeeeeennnnnnnnntttttt")
   return(
   <Box>
       <AppBar position="fixed" >
@@ -137,9 +137,9 @@ const navigate = useNavigate();
           <NotificationsOutlinedIcon />
 
          <div style={{position:"relative"}}>
-         <div style={{backgroundColor:`${addcartdata.length===0?"":"yellow"}`,height:"15px",width:"15px",borderRadius:"20px",
+         <div style={{backgroundColor:`${addcartdata?.length===0?"":"yellow"}`,height:"15px",width:"15px",borderRadius:"20px",
          display:"flex",justifyContent:"center",alignItems:"center",position:"relative",position:"absolute",bottom:"20px",left:"12px"}}>          
-          <span style={{color:"black",fontWeight:"200",fontSize:"15px",display:`${addcartdata.length===0?"none":""}`}}>{addcartdata.length}</span></div>
+          <span style={{color:"black",fontWeight:"200",fontSize:"15px",display:`${addcartdata?.length===0?"none":""}`}}>{addcartdata?.length}</span></div>
          </div>
 
           </Box>
